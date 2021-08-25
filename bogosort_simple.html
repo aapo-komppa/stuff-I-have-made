@@ -1,0 +1,120 @@
+<html>
+<head>
+<style>
+	#table{
+		height: 60px;
+		width: 144px;
+		background-color: #f2f2f2;
+	}
+	
+	#table > * {
+		width: 34px;
+		background-color: hotpink;
+		display: inline-block;
+		margin: 0 1px;
+	}	
+
+	#table #div1{height: 12px;}
+	#table #div2{height: 24px;}
+	#table #div3{height: 36px;}
+	#table #div4{height: 48px;}
+</style>
+</head>
+<body>
+
+<div id="table">
+</div>
+
+<script>
+
+// define vars
+var list = [];
+var sortState = false;
+
+// create list of items
+for(let i = 0; i<4; i++) {
+	list[i] = i+1;
+}
+
+// start loop
+loop();
+
+function loop() {
+    setTimeout(function () {
+	
+	// empty the table
+	table.innerHTML = null;
+	// create new table
+	draw();
+
+	// check if the table is in order
+	if(checkList(list) == true) {
+	    sortState = true;
+	}
+	
+	// restart the loop
+        if (sortState == false) {
+            loop();
+        }
+
+    }, 100)
+}
+
+function draw() {
+	
+	// suffle the list
+	list = shuffle(list);
+
+	console.log(list);
+	
+	// draw the table
+	var table = document.getElementById("table");
+	for(let i = 0; i < list.length; i++) {
+		let para = document.createElement("div");
+		para.setAttribute("id", "div" + list[i]);
+		table.appendChild(para);
+	}
+}
+
+function checkList(list) {
+	
+	// go through the list 
+	for(let i = 1; i < list.length; i++) {
+		
+		// and check if it is in order
+		if(list[i-1] > list[i]) {
+			console.log("false");
+			return false;
+		}
+
+	}
+
+	console.log("true");
+	return true;
+}
+
+// this is de facto way to randomise in JS according to Stackoverflow
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+</script>
+
+</body>
+</html>
+

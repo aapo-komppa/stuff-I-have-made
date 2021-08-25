@@ -1,0 +1,27 @@
+<script>
+
+var numbers = [3,5];
+var words = ["fizz", "buzz"];
+var length = 1000;
+
+if(numbers.length == words.length){
+    for(let i = 1; i <= length; i++) {
+        var output = "";
+
+		for(let j = 0; j < numbers.length; j++) {
+    	    if(i % numbers[j] == 0) {
+				output += words[j];
+       	    }
+		}
+
+		if(output === "") {
+            output += i;
+    	}
+
+		console.log(output);
+    }
+}else{
+    console.error("different amount of numbers and words!");
+}
+
+</script>
