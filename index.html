@@ -1,0 +1,1031 @@
+<html>
+<head>
+<style>
+
+	/* korttitausta */
+
+	.kortti{
+		width: 320px;
+		height: 500px;
+		border: 2px solid black;
+		border-radius: 16px;
+		display: inline-block;
+	}
+
+	.tausta{
+		border-radius: 14px;
+		height: 460px;
+		width: 280px;
+		margin: 20px;
+	}
+
+	.punainen{
+		background-color: red;
+		color: red;
+	}
+
+	.keltainen{
+		background-color: yellow;
+		color: yellow;
+	}
+
+	.vihrea{
+		background-color: green;
+		color: green;
+	}
+
+	.sininen{
+		background-color: blue;
+		color: blue;
+	}
+	
+	.musta{
+		background-color: black;
+	}
+
+	.valkoinen{
+		border: 2px solid;
+		height: 360px;
+		border-color: transparent;
+		width: 278px;
+		margin-left: -2px;
+		margin-top: 50px;
+		display: inline-block;
+		border-radius: 140px;
+		transform: skewX(-14deg);
+		background-color: white;
+	}
+
+	/* pikkunumerot */
+
+	.yla-numero{
+		height: 50px;
+		width: 50px;
+		position: absolute;
+	}
+
+	.ala-numero{
+		height: 50px;
+		width: 50px;
+		margin-left: auto;
+		margin-top: -4px;
+	}
+
+	.yla-numero > p, .ala-numero > p{
+		color: white;
+		font-size: 45px;
+		font-family: helvetica;
+		font-weight: 600;
+		text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	}
+
+	.yla-numero > p{
+		margin-left: 9px;
+		margin-top: 2px;
+	}
+
+	.ala-numero > p{
+		margin-top: -5px;
+		transform: rotate(180deg);
+		margin-right: 11px;
+	}
+
+	/* iso keskinumero */
+
+	.iso-numero{
+		margin-top: 20px;
+	}
+
+	.iso-numero > p{
+		text-align: center;
+		font-size: 220px;
+		margin-top: 0;
+		font-family: helvetica;
+		color: inherit;
+		font-weight: 800;
+		text-shadow: 4px 4px #000;
+	}
+
+	.iso-numero > .alaviiva{
+		text-decoration: underline;
+		font-size: 195px;
+	}
+
+	/* erikoiskortit  */
+
+		/* ohitus "kieltomerkki" */
+
+			.kieltomerkki{
+				height: 180px;
+				width: 180px;
+				background-color: #ffff00;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 92px;
+				border-radius: 95px 85px 95px 85px;
+				box-shadow: 0px -4px 2px 1px rgba(0,0,0,1);
+				border: 1px solid black;
+				transform: skewX(14deg);
+			}
+
+			.kielto-sisus{
+				height: 120px;
+				width: 120px;
+				background-color: white;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 30px;
+				border-radius: 95px 85px 95px 85px;
+				box-shadow: inset 0px -4px 2px 1px rgba(0,0,0,1);
+				border: 1px solid black;
+			}
+
+			.kieltoviiva{
+				width: 115px;
+				height: 40px;
+				background-color: yellow;
+				position: relative;
+				top: -85px;
+				left: 32px;
+				transform: rotate(-40deg);
+				border-top: 4px solid black;
+				border-bottom: 1px solid black;
+			}
+
+			.kieltoviiva-tayte{
+				width: 132px;
+				height: 40px;
+				background-color: yellow;
+				position: relative;
+				top: -125px;
+				left: 23px;
+				transform: rotate(-40deg);
+			}
+
+		/* kääntö "vaihto" merkki */
+
+			.vaihtomerkki-kolmio-yla{
+				width: 0;
+				height: 0;
+				border-left: solid transparent;
+				border-right: solid transparent;
+				border-bottom: solid blue;
+				border-width: 55px;
+				float: right;
+				transform: rotate(50deg);
+				margin-top: 60px;
+				margin-right: -102px;
+			}
+			
+			.vaihtomerkki-kolmio-yla-varjo{
+				width: 0;
+				height: 0;
+				border-left: solid transparent;
+				border-right: solid transparent;
+				border-bottom: solid black;
+				border-width: 55px;
+				float: right;
+				transform: rotate(50deg);
+				margin-top: 70px;
+				margin-right: 21px;
+			}
+
+			.vaihtomerkki-varsi-yla{
+				width: 50px;
+				height: 100px;
+				background-color: blue;
+				margin-right: 111px;
+				margin-left: auto;
+				margin-top: 89px;
+				transform: rotate(50deg);
+				border-radius: 0 0 0 36px;
+				border-right: 10px solid black;
+			}
+
+			.vaihtomerkki-varsi-ala{
+				width: 50px;
+				height: 100px;
+				background-color: blue;
+				margin-right: 111px;
+				margin-left: auto;
+				margin-top: -33px;
+				transform: rotate(50deg);
+				border-radius: 0 36px 0 0;
+				box-shadow: 10px 0 #000;
+			}
+
+			.vaihtomerkki-kolmio-ala{
+				width: 0;
+				height: 0;
+				border-left: solid transparent;
+				border-right: solid transparent;
+				border-bottom: solid blue;
+				border-width: 55px;
+				float: right;
+				transform: rotate(-130deg);
+				margin-top: -66px;
+				margin-right: 140px;
+			}
+
+			.vaihtomerkki-kolmio-ala-varjo{
+			    width: 0;
+				height: 0;
+				border-left: solid transparent;
+				border-right: solid transparent;
+				border-bottom: solid black;
+				border-width: 55px;
+				float: right;
+				transform: rotate(-130deg);
+				margin-top: -19px;
+				margin-right: 131px;
+			}
+			
+			/* skew fix for vaihtomerkki */
+			
+			.valkoinen .vaihtomerkki-varsi-yla, .valkoinen .vaihtomerkki-varsi-ala {
+				transform: skewX(14deg) rotate(50deg);
+			}
+
+			.valkoinen .vaihtomerkki-kolmio-yla {
+			    	transform: rotate(42deg);
+    				margin-top: 58px;
+    				margin-right: -103px;
+			}	
+			
+			.valkoinen .vaihtomerkki-kolmio-yla-varjo {
+				transform: rotate(42deg);
+				margin-top: 65px;
+				margin-right: 32px;
+			}
+			
+			.valkoinen .vaihtomerkki-kolmio-ala {
+				transform: rotate(-138deg);
+				margin-top: -60px;
+				margin-right: 129px;
+			}
+			
+			.valkoinen .vaihtomerkki-kolmio-ala-varjo {
+				transform: rotate(-138deg);
+				margin-top: -20px;
+				margin-right: 124px;
+			}
+			
+		/* +2 kortti */
+			
+			.yla-kortti{
+			    height: 130px;
+				width: 70px;
+				margin-right: 65px;
+				margin-top: 60px;
+				margin-left: auto;
+				background-color: white;
+				transform: skewX(-14deg);
+				border-radius: 5px;
+				border: 2px solid black;
+				box-shadow: 5px 5px 0px 0px black;
+			}
+			
+			.yla-kortti-sisus{
+			    height: 117px;
+				width: 54px;
+				margin-right: 74px;
+				margin-top: -125px;
+				margin-left: auto;
+				background-color: blue;
+				transform: skewX(-14deg);
+				border-radius: 5px;
+				float: right;
+			}
+			
+			.ala-kortti{
+				height: 130px;
+				width: 70px;
+				margin-right: 128px;
+				margin-top: -53px;
+				margin-left: auto;
+				background-color: white;
+				transform: skewX(-14deg);
+				border-radius: 5px;
+				border: 2px solid black;
+			}
+			
+			.ala-kortti-sisus{
+				height: 117px;
+				width: 54px;
+				margin-right: 137px;
+				margin-top: -130px;
+				margin-left: auto;
+				background-color: blue;
+				transform: skewX(-14deg);
+				border-radius: 5px;
+				float: right;
+			}
+			
+			.ala-kortti-varjo{
+				height: 89px;
+				width: 75px;
+				margin-right: 133px;
+				margin-top: -2px;
+				margin-left: auto;
+				background-color: black;
+				transform: skewX(-14deg);
+				border-radius: 5px;
+				float: right;			
+			}
+			
+		/* +4 kortti */
+		
+		.plus-nelja .ala-kortti {
+			margin-top: 182px;
+			height: 100px;
+			width: 55px;
+			border-width: 1px;
+			box-shadow: 5px 5px 0px 0px black;
+		}
+		
+		.plus-nelja .ala-kortti-sisus {
+			height: 89px;
+			width: 42px;
+			margin-right: 136px;
+			margin-top: -95px;
+			background-color: yellow;
+		}
+		
+		.plus-nelja .oik-kortti {
+			margin-top: -168px;
+			height: 100px;
+			width: 55px;
+			border-width: 1px;
+			margin-left: auto;
+			margin-right: 74px;
+			background-color: white;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			border: 2px solid black;
+		}
+		
+		.plus-nelja .oik-kortti-sisus {
+			height: 89px;
+			width: 42px;
+			margin-right: 82px;
+			margin-top: -160px;
+			background-color: green;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			float: right;
+		}
+		
+		.plus-nelja .oik-kortti-varjo {
+			height: 103px;
+			width: 37px;
+			margin-right: 71px;
+			margin-top: -162px;
+			margin-left: auto;
+			background-color: black;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			float: right;
+		}
+		
+		.plus-nelja .yla-kortti {
+			margin-top: -138px;
+			height: 100px;
+			width: 55px;
+			border-width: 1px;
+			margin-left: auto;
+			margin-right: 104px;
+			background-color: white;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			border: 1px solid black;
+			box-shadow: none;
+		}
+		
+		.plus-nelja .yla-kortti-sisus {
+			height: 89px;
+			width: 42px;
+			margin-right: 112px;
+			margin-top: -196px;
+			background-color: blue;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			float: right;
+		}
+		
+		.plus-nelja .yla-kortti-varjo {
+			height: 38px;
+			width: 37px;
+			margin-right: 89px;
+			margin-top: -202px;
+			margin-left: auto;
+			background-color: black;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			float: right;
+		}
+		
+		.plus-nelja .vas-kortti {
+			margin-top: -56px;
+			height: 100px;
+			width: 55px;
+			border-width: 1px;
+			margin-left: auto;
+			margin-right: 162px;
+			background-color: white;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			border: 1px solid black;
+			box-shadow: none;
+		}
+		
+		.plus-nelja .vas-kortti-sisus {
+			height: 89px;
+			width: 42px;
+			margin-right: 169px;
+			margin-top: -150px;
+			background-color: red;
+			transform: skewX(-14deg);
+			border-radius: 5px;
+			float: right;
+		}
+		
+		.plus-nelja .vas-kortti-varjo {
+			height: 47px;
+			width: 49px;
+			margin-right: 177px;
+			margin-top: -96px;
+			margin-left: auto;
+			background-color: black;
+			transform: skewX(-14deg);
+			border-radius: 0 0 0 5px;
+			float: right;
+		}
+		
+		/* värin vaihto kortti */
+		
+		.rinkula{
+			border: 2px solid;
+			height: 330px;
+			border-color: transparent;
+			width: 245px;
+			margin-left: 15px;
+			margin-top: 14px;
+			display: inline-block;
+			border-radius: 140px;
+			background-color: blue;
+		}
+		
+		.rinkula .vasen-yla{
+			height: 169px;
+			width: 120px;
+			border-top-left-radius: inherit;
+			background-color: green;
+			margin-top: -2px;
+			margin-left: -2px;
+			display: inline-block;
+		}
+		
+		.rinkula .oikea-yla{
+			height: 170px;
+			width: 129px;
+			border-top-right-radius: 126px;
+			background-color: yellow;
+			margin-top: -3px;
+			margin-right: -3px;
+			float: right;
+		}
+		
+		.rinkula .oikea-ala {
+			height: 165px;
+			width: 129px;
+			border-bottom-right-radius: 124px;
+			background-color: red;
+			margin-top: 0px;
+			margin-right: -3px;
+			float: right;
+		}
+
+	/* erikoiskorttien pikkukuvakkeet */
+
+	.ala-numero.erikois > p, .yla-numero.erikois > p{
+		visibility: hidden;
+	}
+
+	.yla-numero.erikois{
+		margin-top: 8px;
+		margin-left: 8px;
+	}
+
+		/* pikku kieltomerkki  */
+		
+		.ala-numero.erikois > .pienierikoismerkki, .yla-numero.erikois > .pienierikoismerkki{
+			transform: scale(0.25) translate(-286px, -857px);
+			background-color: white;
+		}
+		
+		.erikois .kieltomerkki{
+			border-width: 3px;
+		}
+
+		.erikois .kielto-sisus{
+			background-color: yellow;
+			border-width: 3px;
+		}
+
+		.erikois .kieltoviiva{
+			border-width: 5px;
+			background-color: white;
+		}
+
+		.erikois .kieltoviiva-tayte{
+			top: -133px;
+			width: 140px;
+			background-color: white;
+		}
+		
+		/* pikku vaihtomerkki */
+		
+		.ala-numero.erikois > .pienierikoismerkki.vaihto, .yla-numero.erikois > .pienierikoismerkki.vaihto{
+			transform: scale(0.25) translate(0, -810px);
+			background-color: transparent;
+		}
+		
+		.ala-numero.erikois > .pienierikoismerkki.vaihto{
+			margin-top: -15px;
+		}
+					
+		.pienierikoismerkki .vaihtomerkki-varsi-yla{
+			background-color: white;
+			margin-top: 90px;
+		}
+		
+		.pienierikoismerkki .vaihtomerkki-varsi-ala{
+			background-color: white;
+			margin-top: -21px;
+		}
+		
+		.pienierikoismerkki .vaihtomerkki-kolmio-yla{
+			border-bottom-color: white;
+			margin-top: -30px;
+			margin-right: -102px;
+		}
+		
+		.pienierikoismerkki .vaihtomerkki-kolmio-yla-varjo{
+			margin-top: -24px;
+			margin-right: -97px;
+		}
+		
+		.pienierikoismerkki .vaihtomerkki-kolmio-ala{
+			margin-top: -68px;
+			margin-right: 30px;
+			border-bottom-color: white;
+		}
+		
+		.pienierikoismerkki .vaihtomerkki-kolmio-ala-varjo{
+			margin-right: 23px;
+		}
+		
+		.ala-numero.erikois.ala-vaihto-merkki{
+			margin-right: 4px;
+		}
+		
+		/* värin vaihto pikkumerkki */
+		
+		.yla-numero .rinkula.pieni {
+			transform: scale(0.15) translate(-774px, -1662px) skewX(-14deg);
+			position: absolute;
+		}	
+		
+		.ala-numero .rinkula.pieni {
+			transform: scale(0.15) translate(-791px, -1754px) skewX(-14deg);
+			position: absolute;
+		}	
+			
+</style>
+</head>
+<body>
+	<div class="rivi">
+
+		<div class="kortti">
+			<div class="tausta punainen">
+
+				<div class="yla-numero">
+					<p>1</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>1</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>1</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta vihrea">
+
+				<div class="yla-numero">
+					<p>2</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>2</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>2</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta keltainen">
+
+				<div class="yla-numero">
+					<p>3</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>3</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>3</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta sininen">
+
+				<div class="yla-numero">
+					<p>4</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>4</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>4</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta sininen">
+
+				<div class="yla-numero">
+					<p>+2</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="yla-kortti">
+					</div>
+					<div class="yla-kortti-sisus">
+					</div>
+					<div class="ala-kortti-varjo">
+					</div>
+					<div class="ala-kortti">
+					</div>
+					<div class="ala-kortti-sisus">
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>+2</p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="rivi">
+
+		<div class="kortti">
+			<div class="tausta punainen">
+
+				<div class="yla-numero">
+					<p>5</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>5</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>5</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta vihrea">
+
+				<div class="yla-numero">
+					<p>6</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p class="alaviiva">6</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>6</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta keltainen">
+
+				<div class="yla-numero">
+					<p>7</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>7</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>7</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta sininen">
+
+				<div class="yla-numero">
+					<p>8</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>8</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>8</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta musta plus-nelja">
+
+				<div class="yla-numero">
+					<p>+4</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="ala-kortti">
+					</div>
+					<div class="ala-kortti-sisus">
+					</div>
+					<div class="oik-kortti-varjo">
+					</div>
+					<div class="oik-kortti">
+					</div>
+					<div class="oik-kortti-sisus">
+					</div>
+					<div class="yla-kortti-varjo">
+					</div>
+					<div class="yla-kortti">
+					</div>
+					<div class="yla-kortti-sisus">
+					</div>
+					<div class="vas-kortti-varjo">
+					</div>
+					<div class="vas-kortti">
+					</div>
+					<div class="vas-kortti-sisus">
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>+4</p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="rivi">
+
+		<div class="kortti">
+			<div class="tausta punainen">
+
+				<div class="yla-numero">
+					<p>9</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p class="alaviiva">9</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>9</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta vihrea">
+
+				<div class="yla-numero">
+					<p>0</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="iso-numero">
+						<p>0</p>
+					</div>
+				</div>
+
+				<div class="ala-numero">
+					<p>0</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta keltainen">
+
+				<div class="yla-numero erikois">
+					<p>0
+						<div class="kieltomerkki pienierikoismerkki">
+							<div class="kielto-sisus">
+							</div>
+							<div class="kieltoviiva">
+							</div>
+							<div class="kieltoviiva-tayte">
+							</div>
+						</div>
+					</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="kieltomerkki">
+						<div class="kielto-sisus">
+						</div>
+						<div class="kieltoviiva">
+						</div>
+						<div class="kieltoviiva-tayte">
+						</div>
+					</div>
+				</div>
+
+				<div class="ala-numero erikois">
+					<p>0
+						<div class="kieltomerkki pienierikoismerkki">
+							<div class="kielto-sisus">
+							</div>
+							<div class="kieltoviiva">
+							</div>
+							<div class="kieltoviiva-tayte">
+							</div>
+						</div>
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="kortti">
+			<div class="tausta sininen">
+
+				<div class="yla-numero erikois">
+					<p>0
+						<div class="vaihtomerkki pienierikoismerkki vaihto">
+							<div class="vaihtomerkki-kolmio-yla-varjo">
+							</div>
+							<div class="vaihtomerkki-kolmio-yla">
+							</div>
+							<div class="vaihtomerkki-varsi-yla">
+							</div>
+							<div class="vaihtomerkki-varsi-ala">
+							</div>
+							<div class="vaihtomerkki-kolmio-ala-varjo">
+							</div>
+							<div class="vaihtomerkki-kolmio-ala">
+							</div>
+						</div>
+					</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="vaihtomerkki-kolmio-yla-varjo">
+					</div>
+					<div class="vaihtomerkki-kolmio-yla">
+					</div>
+					<div class="vaihtomerkki-varsi-yla">
+					</div>
+					<div class="vaihtomerkki-varsi-ala">
+					</div>
+					<div class="vaihtomerkki-kolmio-ala-varjo">
+					</div>
+					<div class="vaihtomerkki-kolmio-ala">
+					</div>
+				</div>
+
+				<div class="ala-numero erikois ala-vaihto-merkki">
+					<p>0
+						<div class="vaihtomerkki pienierikoismerkki vaihto">
+							<div class="vaihtomerkki-kolmio-yla-varjo">
+							</div>
+							<div class="vaihtomerkki-kolmio-yla">
+							</div>
+							<div class="vaihtomerkki-varsi-yla">
+							</div>
+							<div class="vaihtomerkki-varsi-ala">
+							</div>
+							<div class="vaihtomerkki-kolmio-ala-varjo">
+							</div>
+							<div class="vaihtomerkki-kolmio-ala">
+							</div>
+						</div>
+					</p>
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="kortti">
+			<div class="tausta musta">
+
+				<div class="yla-numero erikois">
+					<p>4
+					<div class="rinkula pieni">
+						<div class="vasen-yla">
+						</div>
+						<div class="oikea-yla">
+						</div>
+						<div class="oikea-ala">
+						</div>
+					</div>
+					</p>
+				</div>
+
+				<div class="valkoinen">
+					<div class="rinkula">
+						<div class="vasen-yla">
+						</div>
+						<div class="oikea-yla">
+						</div>
+						<div class="oikea-ala">
+						</div>
+					</div>
+				</div>
+
+				<div class="ala-numero erikois">
+					<p>4
+					<div class="rinkula pieni">
+						<div class="vasen-yla">
+						</div>
+						<div class="oikea-yla">
+						</div>
+						<div class="oikea-ala">
+						</div>
+					</div>
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
